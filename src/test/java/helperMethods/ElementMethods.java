@@ -61,5 +61,4 @@ public class ElementMethods {
         element.clear();
         element.sendKeys(text);
     }
-
 }
