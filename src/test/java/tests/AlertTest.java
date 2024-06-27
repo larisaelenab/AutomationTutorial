@@ -9,6 +9,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
+import pages.AlertsPage;
+import pages.AlertsWindowsPage;
+import pages.HomePage;
 
 import java.time.Duration;
 
@@ -28,39 +31,51 @@ public class AlertTest {
         AlertMethods alertMethods = new AlertMethods(driver);
         ElementMethods elementMethods = new ElementMethods(driver);
         PageMethods pageMethods = new PageMethods(driver);
+        HomePage homePage = new HomePage(driver);
+        AlertsWindowsPage alertsWindowsPage = new AlertsWindowsPage(driver);
+        AlertsPage alertsPage = new AlertsPage(driver);
 
         //JavascriptExecutor js = (JavascriptExecutor) driver;
         //js.executeScript("window.scrollBy(0,350)", "");
-        pageMethods.scrollPage(0,350);
-        WebElement alertsMenu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
+        //pageMethods.scrollPage(0,350);
+        //WebElement alertsMenu = driver.findElement(By.xpath("//h5[text()='Alerts, Frame & Windows']"));
         //alertsMenu.click();
-        elementMethods.clickElement(alertsMenu);
+        //elementMethods.clickElement(alertsMenu);
 
-        WebElement alertsFromSubmenu = driver.findElement(By.xpath("//span[text()='Alerts']"));
+        homePage.navigateToAlertsMenu();
+        alertsWindowsPage.navigateToAlertsPage();
+        alertsPage.interactAlertOk();
+        alertsPage.interactWithTimerButton();
+        alertsPage.interactWithPromptButton("text alerta");
+        alertsPage.interactWithConfirmationButton();
+
+
+
+        //WebElement alertsFromSubmenu = driver.findElement(By.xpath("//span[text()='Alerts']"));
         //alertsFromSubmenu.click();
-        elementMethods.clickElement(alertsFromSubmenu);
+        //elementMethods.clickElement(alertsFromSubmenu);
 
         //interactionam cu o alerta
-        WebElement firstAlert = driver.findElement(By.id("alertButton"));
+        //WebElement firstAlert = driver.findElement(By.id("alertButton"));
         //firstAlert.click();
-        elementMethods.clickElement(firstAlert);
-        alertMethods.acceptAlert();
+        //elementMethods.clickElement(firstAlert);
+        //alertMethods.acceptAlert();
         //Alert alertOk = driver.switchTo().alert();
         //System.out.println(alertOk.getText());
         //alertOk.accept();
 
-        WebElement confirmAlertButton = driver.findElement(By.id("confirmButton"));
+        //WebElement confirmAlertButton = driver.findElement(By.id("confirmButton"));
         //confirmAlertButton.click();
-        elementMethods.clickElement(confirmAlertButton);
-        alertMethods.dismissAlert();
+        //elementMethods.clickElement(confirmAlertButton);
+        //alertMethods.dismissAlert();
         //Alert confirmAlert = driver.switchTo().alert();
         //System.out.println(confirmAlert.getText());
         //confirmAlert.dismiss();
 
-        WebElement promptAlertButton = driver.findElement(By.id("promtButton"));
+        ///WebElement promptAlertButton = driver.findElement(By.id("promtButton"));
         //promptAlertButton.click();
-        elementMethods.clickElement(promptAlertButton);
-        alertMethods.fillAlert("text alerta");
+        //elementMethods.clickElement(promptAlertButton);
+        //alertMethods.fillAlert("text alerta");
         //Alert promptAlert = driver.switchTo().alert();
         //System.out.println(promptAlert.getText());
         //String alertValue = "text alerta";
@@ -69,10 +84,10 @@ public class AlertTest {
 
 
         //interactionam cu o alerta pt care trebuie sa asteptam putin
-        WebElement timerAlertButton = driver.findElement(By.id("timerAlertButton"));
+        //WebElement timerAlertButton = driver.findElement(By.id("timerAlertButton"));
         //timerAlertButton.click();
-        elementMethods.clickElement(timerAlertButton);
-        alertMethods.acceptAlert();
+        //elementMethods.clickElement(timerAlertButton);
+        //alertMethods.acceptAlert();
         //definim un wait explicit
         //WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         //wait.until(ExpectedConditions.alertIsPresent());

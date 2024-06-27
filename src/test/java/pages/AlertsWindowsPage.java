@@ -2,6 +2,7 @@ package pages;
 
 import helperMethods.ElementMethods;
 import helperMethods.PageMethods;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -36,5 +37,11 @@ public class AlertsWindowsPage {
 
     }
 
+    @FindBy(xpath = "//span[text()='Alerts']")
+    public WebElement alertsFromSubmenu;
+
+    public void navigateToAlertsPage(){
+        elementMethods.clickElement(alertsFromSubmenu);
+    }
 
 }
