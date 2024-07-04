@@ -1,19 +1,12 @@
 package tests;
 
-import helperMethods.ElementMethods;
-import helperMethods.PageMethods;
-import helperMethods.WindowMethods;
-import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.FormsPage;
 import pages.HomePage;
 import pages.PracticeFormPage;
 
-import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 

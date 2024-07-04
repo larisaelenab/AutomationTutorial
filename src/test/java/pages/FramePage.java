@@ -3,8 +3,6 @@ package pages;
 import helperMethods.ElementMethods;
 import helperMethods.FrameMethods;
 import helperMethods.PageMethods;
-import helperMethods.WindowMethods;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,10 +24,8 @@ public class FramePage {
 
     @FindBy(id = "sampleHeading")
     WebElement iframeText;
-
     @FindBy(id = "sampleHeading")
     WebElement iframeText2;
-
     @FindBy(xpath = "//span[text()='Nested Frames']")
     WebElement nestedFramesFromSubmenu;
 

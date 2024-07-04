@@ -24,7 +24,6 @@ public class WindowsPage {
 
     @FindBy(id = "tabButton")
     public WebElement newTab;
-
     @FindBy(id = "windowButton")
     public WebElement newWindow;
 

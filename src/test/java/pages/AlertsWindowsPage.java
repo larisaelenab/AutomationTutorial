@@ -2,7 +2,6 @@ package pages;
 
 import helperMethods.ElementMethods;
 import helperMethods.PageMethods;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -22,23 +21,21 @@ public class AlertsWindowsPage {
 
     @FindBy(xpath = "//span[text()='Browser Windows']")
     public WebElement browserWindowsSubmenu;
+    @FindBy(xpath = "//span[text()='Frames']")
+    public WebElement framesFromSubmenu;
+    @FindBy(xpath = "//span[text()='Alerts']")
+    public WebElement alertsFromSubmenu;
 
     public void navigateToWindowPage(){
         pageMethods.scrollPage(0,350);
         elementMethods.clickElement(browserWindowsSubmenu);
     }
 
-    @FindBy(xpath = "//span[text()='Frames']")
-    public WebElement framesFromSubmenu;
-
     public void navigateToFramePage(){
         pageMethods.scrollPage(0, 350);
         elementMethods.clickElement(framesFromSubmenu);
 
     }
-
-    @FindBy(xpath = "//span[text()='Alerts']")
-    public WebElement alertsFromSubmenu;
 
     public void navigateToAlertsPage(){
         elementMethods.clickElement(alertsFromSubmenu);

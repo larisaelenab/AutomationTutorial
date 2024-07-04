@@ -2,7 +2,6 @@ package pages;
 
 import helperMethods.ElementMethods;
 import helperMethods.PageMethods;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,18 +22,24 @@ public class HomePage {
 
     @FindBy(xpath = "//h5[text()='Alerts, Frame & Windows']")
     public WebElement alertsMenu;
+    @FindBy(xpath = "//h5[text()='Elements']")
+    public WebElement elementsMenu;
+    @FindBy(xpath = "//h5[text()='Forms']")
+    public WebElement formMenu;
 
     public void navigateToAlertsMenu(){
         pageMethods.scrollPage(0,350);
         elementMethods.clickElement(alertsMenu);
     }
 
-    @FindBy(xpath = "//h5[text()='Forms']")
-    public WebElement formMenu;
-
     public void navigateToFormsMenu(){
         pageMethods.scrollPage(0, 350);
         elementMethods.clickElement(formMenu);
+    }
+
+    public void navigateToElementsMenu(){
+        pageMethods.scrollPage(0, 350);
+        elementMethods.clickElement(elementsMenu);
     }
 
 }

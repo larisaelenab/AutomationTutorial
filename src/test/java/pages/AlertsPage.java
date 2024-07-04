@@ -3,7 +3,6 @@ package pages;
 import helperMethods.AlertMethods;
 import helperMethods.ElementMethods;
 import helperMethods.PageMethods;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,31 +24,27 @@ public class AlertsPage {
 
     @FindBy(id = "alertButton")
     public WebElement firstAlert;
+    @FindBy(id = "confirmButton")
+    public WebElement confirmAlertButton;
+    @FindBy(id = "promtButton")
+    public WebElement promptAlertButton;
+    @FindBy(id = "timerAlertButton")
+    public WebElement timerAlertButton;
 
     public void interactAlertOk(){
         elementMethods.clickElement(firstAlert);
         alertMethods.acceptAlert();
     }
 
-    @FindBy(id = "confirmButton")
-    public WebElement confirmAlertButton;
-
     public void interactWithConfirmationButton(){
         elementMethods.clickElement(confirmAlertButton);
         alertMethods.dismissAlert();
     }
 
-    @FindBy(id = "promtButton")
-    public WebElement promptAlertButton;
-
-
     public void interactWithPromptButton(String text){
         elementMethods.clickElement(promptAlertButton);
         alertMethods.fillAlert(text);
     }
-
-    @FindBy(id = "timerAlertButton")
-    public WebElement timerAlertButton;
 
     public void interactWithTimerButton(){
         elementMethods.clickElement(timerAlertButton);

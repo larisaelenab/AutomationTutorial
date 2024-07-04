@@ -3,7 +3,6 @@ package pages;
 import helperMethods.AlertMethods;
 import helperMethods.ElementMethods;
 import helperMethods.PageMethods;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -12,7 +11,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 import java.io.File;
-import java.util.Arrays;
 import java.util.List;
 
 public class PracticeFormPage {
@@ -36,7 +34,7 @@ public class PracticeFormPage {
     public WebElement lastNameElement;
 
     @FindBy(id = "userEmail")
-    WebElement emailElement;
+    public WebElement emailElement;
 
     @FindBy(xpath = "//div[@id='genterWrapper']/div/div/label[@class='custom-control-label']")
     public List<WebElement> genderElements;
@@ -107,11 +105,9 @@ public class PracticeFormPage {
 
         switch (genderValue) {
             case "Male":
-                //genderElements.get(0).click();
                 elementMethods.clickElement(genderElements.get(0));
                 break;
             case "Female":
-                //genderElements.get(1).click();
                 elementMethods.clickElement(genderElements.get(1));
                 break;
             case "Other":
@@ -190,7 +186,7 @@ public class PracticeFormPage {
         Assert.assertEquals(tableValues.get(8).getText(), "Address "+addressValue);
         Assert.assertEquals(tableValues.get(9).getText(), "State and City "+stateInputValue+" "+cityInputValue);
 
-        //elementMethods.clickElement(closeButton);
+        elementMethods.clickElement(closeButton);
 
         }
 

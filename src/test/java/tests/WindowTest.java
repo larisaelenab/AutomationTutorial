@@ -1,20 +1,11 @@
 package tests;
 
-import helperMethods.ElementMethods;
-import helperMethods.PageMethods;
-import helperMethods.WindowMethods;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import pages.AlertsWindowsPage;
 import pages.HomePage;
 import pages.WindowsPage;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class WindowTest {
 
