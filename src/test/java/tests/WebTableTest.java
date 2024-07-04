@@ -16,16 +16,10 @@ public class WebTableTest {
     @Test
     public void metodaTest(){
 
-        //deschidem un browser
         driver = new ChromeDriver();
-
-        //accesam un anumit url
         driver.get("https://demoqa.com");
-
-        //facem browserul in modul maximize
         driver.manage().window().maximize();
 
-        //Obiecte
         ElementMethods elementMethods = new ElementMethods(driver);
         PageMethods pageMethods = new PageMethods(driver);
 
