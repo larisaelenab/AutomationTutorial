@@ -21,12 +21,10 @@ public class PracticeFormTest {
         driver.manage().window().maximize();
 
         HomePage homePage = new HomePage(driver);
-        FormsPage formsPage = new FormsPage(driver);
-        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
-
         homePage.navigateToFormsMenu();
+        FormsPage formsPage = new FormsPage(driver);
         formsPage.navigateToPracticeForm();
-
+        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
         String firstNameValue = "Larisa";
         String lastNameValue = "Buleu";
         String emailValue = "larisa@yahoo.com";

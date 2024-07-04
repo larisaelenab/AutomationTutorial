@@ -22,10 +22,8 @@ public class AlertTest {
         HomePage homePage = new HomePage(driver);
         homePage.navigateToAlertsMenu();
         AlertsWindowsPage alertsWindowsPage = new AlertsWindowsPage(driver);
-        AlertsPage alertsPage = new AlertsPage(driver);
-
-
         alertsWindowsPage.navigateToAlertsPage();
+        AlertsPage alertsPage = new AlertsPage(driver);
         alertsPage.interactAlertOk();
         alertsPage.interactWithTimerButton();
         alertsPage.interactWithPromptButton("text alerta");
