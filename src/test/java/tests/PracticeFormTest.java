@@ -1,30 +1,23 @@
 package tests;
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import pages.FormsPage;
 import pages.HomePage;
 import pages.PracticeFormPage;
-
+import sharedData.SharedData;
 import java.util.Arrays;
 import java.util.List;
 
-public class PracticeFormTest {
-    public WebDriver driver;
+public class PracticeFormTest extends SharedData {
 
     @Test
     public void metodaTest() {
 
-        driver = new ChromeDriver();
-        driver.get("https://demoqa.com");
-        driver.manage().window().maximize();
-
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.navigateToFormsMenu();
-        FormsPage formsPage = new FormsPage(driver);
+        FormsPage formsPage = new FormsPage(getDriver());
         formsPage.navigateToPracticeForm();
-        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
+        PracticeFormPage practiceFormPage = new PracticeFormPage(getDriver());
         String firstNameValue = "Larisa";
         String lastNameValue = "Buleu";
         String emailValue = "larisa@yahoo.com";
@@ -44,5 +37,4 @@ public class PracticeFormTest {
                 addressValue, stateInputValue, cityInputValue);
 
     }
-
 }
