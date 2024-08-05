@@ -25,6 +25,7 @@ public class PracticeFormTest {
         FormsPage formsPage = new FormsPage(driver);
         formsPage.navigateToPracticeForm();
         PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
+
         String firstNameValue = "Larisa";
         String lastNameValue = "Buleu";
         String emailValue = "larisa@yahoo.com";
