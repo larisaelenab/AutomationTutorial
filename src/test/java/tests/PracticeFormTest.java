@@ -1,48 +1,38 @@
 package tests;
 
+import objectData.PracticeFormObject;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import pages.FormsPage;
 import pages.HomePage;
 import pages.PracticeFormPage;
+import sharedData.SharedData;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class PracticeFormTest {
-    public WebDriver driver;
+public class PracticeFormTest extends SharedData {
 
     @Test
     public void metodaTest() {
 
-        driver = new ChromeDriver();
-        driver.get("https://demoqa.com");
-        driver.manage().window().maximize();
+        //Pregatim datele de test specifice
 
-        HomePage homePage = new HomePage(driver);
+        PracticeFormObject testData=new PracticeFormObject("src/test/resources/testData/PracticeFormData.json");
+
+        //Obiecte (Refactorizam codul:)
+        HomePage homePage=new HomePage(getDriver());
         homePage.navigateToFormsMenu();
-        FormsPage formsPage = new FormsPage(driver);
-        formsPage.navigateToPracticeForm();
-        PracticeFormPage practiceFormPage = new PracticeFormPage(driver);
 
-        String firstNameValue = "Larisa";
-        String lastNameValue = "Buleu";
-        String emailValue = "larisa@yahoo.com";
-        String genderValue = "Female";
-        String mobileValue = "0766000000";
-        String dateofBirthDayValue = "15";
-        String subjectValue = "Accounting";
-        List<String> hobbiesValues = Arrays.asList("Reading", "Music");
-        String picturePathValue = "test.txt";
-        String addressValue = "Str. Mihai-Bravu, nr 12";
-        String stateInputValue = "Haryana";
-        String cityInputValue = "Panipat";
+        FormsPage formPage=new FormsPage(getDriver());
+        formPage.navigateToPracticeForm();
 
-        practiceFormPage.fillEntireForm(firstNameValue, lastNameValue, emailValue, genderValue, mobileValue, dateofBirthDayValue, subjectValue, hobbiesValues,
-                picturePathValue, addressValue, stateInputValue, cityInputValue);
-        practiceFormPage.validateEntireForm(firstNameValue, lastNameValue, emailValue, genderValue, mobileValue, dateofBirthDayValue, subjectValue, hobbiesValues, picturePathValue,
-                addressValue, stateInputValue, cityInputValue);
+        PracticeFormPage practiceFormPage=new PracticeFormPage(getDriver());
+        practiceFormPage.fillEntireForm(testData);
+
+        practiceFormPage.validateEntireForm(testData);
+
 
     }
 

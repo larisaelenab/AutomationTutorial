@@ -1,20 +1,14 @@
 package pages;
 
-import helperMethods.ElementMethods;
+import objectData.WebTableObject;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class WebTablePage {
-
-    public WebDriver driver;
-    public ElementMethods elementMethods;
+public class WebTablePage extends BasePage{
 
     public WebTablePage(WebDriver driver) {
-        this.driver = driver;
-        elementMethods = new ElementMethods(driver);
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @FindBy(id = "addNewRecordButton")
@@ -44,22 +38,23 @@ public class WebTablePage {
     @FindBy(id = "delete-record-4")
     public WebElement deleteElement;
 
-    public void addEntry(String firstNameValue, String lastNameValue, String emailValue, String ageValue, String salaryValue,
-                         String departamentValue){
+
+
+    public void addEntry(WebTableObject testData){
         elementMethods.clickElement(addElement);
-        elementMethods.fillElement(firstNameElement, firstNameValue);
-        elementMethods.fillElement(lastNameElement, lastNameValue);
-        elementMethods.fillElement(emailElement, emailValue);
-        elementMethods.fillElement(ageElement, ageValue);
-        elementMethods.fillElement(salaryElement, salaryValue);
-        elementMethods.fillElement(departamentElement, departamentValue);
+        elementMethods.fillElement(firstNameElement, testData.getFirstNameValue());
+        elementMethods.fillElement(lastNameElement, testData.getLastNameValue());
+        elementMethods.fillElement(emailElement, testData.getEmailValue());
+        elementMethods.fillElement(ageElement, testData.getAgeValue());
+        elementMethods.fillElement(salaryElement, testData.getSalaryValue());
+        elementMethods.fillElement(departamentElement, testData.getDepartmentValue());
         elementMethods.clickElement(submitElement);
     }
 
-    public void editEntry(String editSalaryValue, String editDepartamentValue){
+    public void editEntry(WebTableObject testData){
         elementMethods.clickElement(updateElement);
-        elementMethods.clearFillElement(editSalaryElement, editSalaryValue);
-        elementMethods.clearFillElement(editDepartamentElement, editDepartamentValue);
+        elementMethods.clearFillElement(editSalaryElement, testData.getEditsalaryValue());
+        elementMethods.clearFillElement(editDepartamentElement, testData.getEditdepartmentValue());
         elementMethods.clickElement(editSubmitElement);
     }
 

@@ -1,37 +1,40 @@
 package tests;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import helperMethods.PageMethods;
+import objectData.PracticeFormObject;
+import objectData.WebTableObject;
 import org.testng.annotations.Test;
-import pages.ElementsPage;
+import pages.BrowserWindowPage;
 import pages.HomePage;
 import pages.WebTablePage;
+import sharedData.SharedData;
 
-public class WebTableTest {
 
-    public WebDriver driver;
+public class WebTableTest extends SharedData {
 
     @Test
-    public void metodaTest(){
 
-        driver = new ChromeDriver();
-        driver.get("https://demoqa.com");
-        driver.manage().window().maximize();
+    public void metodaTest() {
 
-        HomePage homePage = new HomePage(driver);
+        WebTableObject testData=new WebTableObject("src/test/resources/testData/WebTable.json");
+
+        //Obiecte:
+        PageMethods pageMethods=new PageMethods(getDriver());
+        pageMethods.scrollPage(0,360);
+
+        HomePage homePage=new HomePage(getDriver());
         homePage.navigateToElementsMenu();
 
-        ElementsPage elementsPage = new ElementsPage(driver);
-        elementsPage.selectWebTableSubmenu();
+        BrowserWindowPage browserWindowPage=new BrowserWindowPage(getDriver());
+        browserWindowPage.navigateToWebTable();
 
-        WebTablePage webTablePage = new WebTablePage(driver);
-        webTablePage.addEntry("Larisa", "B", "larisa@yahoo.com", "34",
-                "8555", "Testing");
-        webTablePage.editEntry("10000", "HR");
+
+        WebTablePage webTablePage=new WebTablePage(getDriver());
+        webTablePage.addEntry(testData);
+        webTablePage.editEntry(testData);
         webTablePage.deleteEntry();
 
-        driver.quit();
-
     }
+
 
 }
