@@ -2,22 +2,16 @@ package pages;
 
 import helperMethods.ElementMethods;
 import helperMethods.PageMethods;
+import loggerUtility.LoggerUtility;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage {
-
-    public WebDriver driver;
-    public ElementMethods elementMethods;
-    public PageMethods pageMethods;
+public class HomePage extends BasePage{
 
     public HomePage(WebDriver driver) {
-        this.driver = driver;
-        elementMethods = new ElementMethods(driver);
-        pageMethods = new PageMethods(driver);
-        PageFactory.initElements(driver, this);
+        super(driver);
     }
 
     @FindBy(xpath = "//h5[text()='Alerts, Frame & Windows']")
@@ -30,16 +24,19 @@ public class HomePage {
     public void navigateToAlertsMenu(){
         pageMethods.scrollPage(0,350);
         elementMethods.clickElement(alertsMenu);
+        LoggerUtility.info("The user clicks on Alerts Menu");
     }
 
     public void navigateToFormsMenu(){
         pageMethods.scrollPage(0, 350);
         elementMethods.clickElement(formMenu);
+        LoggerUtility.info("The user clicks on Forms Menu");
     }
 
     public void navigateToElementsMenu(){
         pageMethods.scrollPage(0, 350);
         elementMethods.clickElement(elementsMenu);
+        LoggerUtility.info("The user clicks on Elements Menu");
     }
 
 }
