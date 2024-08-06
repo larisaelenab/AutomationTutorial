@@ -1,25 +1,27 @@
+
 package objectData;
 
 import java.util.List;
 
-public class PracticeFormObject extends GeneralObject {
-
-    public PracticeFormObject(String filePath) {
-        fromJsonToObject(filePath);
-    }
+public class PracticeFormObject extends GeneralObject{
 
     private String firstNameValue;
     private String lastNameValue;
-    private String userEmailValue;
+    private String emailValue;
     private String genderValue;
     private String userNumberValue;
-    private String dateOfBirthDaysValue;
-    private String subjectsInputValue;
-    private List<String> hobbiesValue;
-    private String picturePathValue;
-    private String currentAddressValue;
-    private String stateElementValue;
-    private String cityValue;
+    private String chooseDayValue;
+    private String subjectValue;
+    private List<String> activitatiValue;
+    private String terminatiePath;
+    private String userAddressValue;
+    private String stateinputValue;
+    private String cityinputValue;
+
+    public PracticeFormObject(String filePath) {
+
+        fromJsonToObject(filePath);
+    }
 
     public String getFirstNameValue() {
         return firstNameValue;
@@ -37,12 +39,12 @@ public class PracticeFormObject extends GeneralObject {
         this.lastNameValue = lastNameValue;
     }
 
-    public String getUserEmailValue() {
-        return userEmailValue;
+    public String getEmailValue() {
+        return emailValue;
     }
 
-    public void setUserEmailValue(String userEmailValue) {
-        this.userEmailValue = userEmailValue;
+    public void setEmailValue(String emailValue) {
+        this.emailValue = emailValue;
     }
 
     public String getGenderValue() {
@@ -61,59 +63,59 @@ public class PracticeFormObject extends GeneralObject {
         this.userNumberValue = userNumberValue;
     }
 
-    public String getDateOfBirthDaysValue() {
-        return dateOfBirthDaysValue;
+    public String getChooseDayValue() {
+        return chooseDayValue;
     }
 
-    public void setDateOfBirthDaysValue(String dateOfBirthDaysValue) {
-        this.dateOfBirthDaysValue = dateOfBirthDaysValue;
+    public void setChooseDayValue(String chooseDayValue) {
+        this.chooseDayValue = chooseDayValue;
     }
 
-    public String getSubjectsInputValue() {
-        return subjectsInputValue;
+    public String getSubjectValue() {
+        return subjectValue;
     }
 
-    public void setSubjectsInputValue(String subjectsInputValue) {
-        this.subjectsInputValue = subjectsInputValue;
+    public void setSubjectValue(String subjectValue) {
+        this.subjectValue = subjectValue;
     }
 
-    public List<String> getHobbiesValue() {
-        return hobbiesValue;
+    public List<String> getActivitatiValue() {
+        return activitatiValue;
     }
 
-    public void setHobbiesValue(List<String> hobbiesValue) {
-        this.hobbiesValue = hobbiesValue;
+    public void setActivitatiValue(List<String> activitatiValue) {
+        this.activitatiValue = activitatiValue;
     }
 
-    public String getPicturePathValue() {
-        return picturePathValue;
+    public String getTerminatiePath() {
+        return terminatiePath;
     }
 
-    public void setPicturePathValue(String picturePathValue) {
-        this.picturePathValue = picturePathValue;
+    public void setTerminatiePath(String terminatiePath) {
+        this.terminatiePath = terminatiePath;
     }
 
-    public String getCurrentAddressValue() {
-        return currentAddressValue;
+    public String getUserAddressValue() {
+        return userAddressValue;
     }
 
-    public void setCurrentAddressValue(String currentAddressValue) {
-        this.currentAddressValue = currentAddressValue;
+    public void setUserAddressValue(String userAddressValue) {
+        this.userAddressValue = userAddressValue;
     }
 
-    public String getStateElementValue() {
-        return stateElementValue;
+    public String getStateinputValue() {
+        return stateinputValue;
     }
 
-    public void setStateElementValue(String stateElementValue) {
-        this.stateElementValue = stateElementValue;
+    public void setStateinputValue(String stateinputValue) {
+        this.stateinputValue = stateinputValue;
     }
 
-    public String getCityValue() {
-        return cityValue;
+    public String getCityinputValue() {
+        return cityinputValue;
     }
 
-    public void setCityValue(String cityValue) {
-        this.cityValue = cityValue;
+    public void setCityinputValue(String cityinputValue) {
+        this.cityinputValue = cityinputValue;
     }
 }

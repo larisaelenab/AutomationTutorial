@@ -7,32 +7,27 @@ import pages.AlertsWindowsPage;
 import pages.FramePage;
 import pages.HomePage;
 import pages.NestedFramePage;
+import sharedData.SharedData;
 
 import java.time.Duration;
 
-public class FrameTest {
-
-    public WebDriver driver;
+public class FrameTest extends SharedData {
 
     @Test
     public void alertTest() {
-        driver = new ChromeDriver();
-        driver.get("https://demoqa.com");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = new HomePage(getDriver());
         homePage.navigateToAlertsMenu();
 
-        AlertsWindowsPage alertsWindowsPage = new AlertsWindowsPage(driver);
+        AlertsWindowsPage alertsWindowsPage = new AlertsWindowsPage(getDriver());
         alertsWindowsPage.navigateToFramePage();
 
-        FramePage framePage = new FramePage(driver);
+        FramePage framePage = new FramePage(getDriver());
         framePage.interactWithBigIFrame();
         framePage.interactWithSmallIFrame();
         framePage.navigateToNestedFrames();
 
-        NestedFramePage nestedFramePage = new NestedFramePage(driver);
+        NestedFramePage nestedFramePage = new NestedFramePage(getDriver());
         nestedFramePage.interactWithNestedFrames();
 
     }

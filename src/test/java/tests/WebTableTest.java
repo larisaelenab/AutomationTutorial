@@ -16,7 +16,7 @@ public class WebTableTest extends SharedData {
 
     public void metodaTest() {
 
-        WebTableObject testData=new WebTableObject("src/test/resources/testData/WebTable.json");
+        WebTableObject testData=new WebTableObject("src/test/resources/testData/WebTableData.json");
 
         //Obiecte:
         PageMethods pageMethods=new PageMethods(getDriver());
