@@ -1,14 +1,10 @@
 package tests;
 
-import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 import pages.AlertsPage;
 import pages.AlertsWindowsPage;
 import pages.HomePage;
 import sharedData.SharedData;
-
-import java.time.Duration;
 
 public class AlertTest extends SharedData {
 
