@@ -27,28 +27,28 @@ public class AlertsPage extends BasePage{
 
 
     public void interactAlertOk(){
-        elementMethods.clickElement(firstAlert);
+        elementMethods.clickJSElement(firstAlert);
         LoggerUtility.info("The user clicks on the alertOK button");
         alertMethods.acceptAlert();
         LoggerUtility.info("The user interacts with the alertOK successfully");
     }
 
     public void interactWithConfirmationButton(){
-        elementMethods.clickElement(confirmAlertButton);
+        elementMethods.clickJSElement(confirmAlertButton);
         LoggerUtility.info("The user clicks on the confirmAlert button");
         alertMethods.dismissAlert();
         LoggerUtility.info("The user interacts with the confirmAlert successfully");
     }
 
     public void interactWithPromptButton(String text){
-        elementMethods.clickElement(promptAlertButton);
+        elementMethods.clickJSElement(promptAlertButton);
         LoggerUtility.info("The user clicks on the prompt button");
         alertMethods.fillAlert(text);
         LoggerUtility.info("The user submits the text in the prompt");
     }
 
     public void interactWithTimerButton(){
-        elementMethods.clickElement(timerAlertButton);
+        elementMethods.clickJSElement(timerAlertButton);
         LoggerUtility.info("The user clicks on the alertDelay button");
         alertMethods.acceptAlert();
         LoggerUtility.info("The user interacts with the alertDelay successfully");
