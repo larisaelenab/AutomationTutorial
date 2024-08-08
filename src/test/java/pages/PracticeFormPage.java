@@ -156,6 +156,7 @@ public class PracticeFormPage extends BasePage{
 
     public void validateEntireForm(PracticeFormObject testData){
 
+        elementMethods.waitForElementVisible(thankYouMessageElement);
         Assert.assertEquals(thankYouMessageElement.getText(), "Thanks for submitting the form");
         LoggerUtility.info("The user validates the presence of " + thankYouMessageElement.getText());
         Assert.assertEquals(tableValue.get(0).getText(), "Student Name " + testData.getFirstNameValue() + " " + testData.getLastNameValue());
