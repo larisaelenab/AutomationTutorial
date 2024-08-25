@@ -34,7 +34,7 @@ public class WindowsPage extends BasePage{
     }
 
     public void interactWithNewWindow(){
-        elementMethods.clickElement(newWindow);
+        elementMethods.clickJSElement(newWindow);
         LoggerUtility.info("The user performed a click");
         System.out.println(driver.getCurrentUrl());
         windowMethods.switchSpecificTab(1);
