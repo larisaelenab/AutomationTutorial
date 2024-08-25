@@ -18,6 +18,8 @@ public class ElementsPage extends BasePage{
     public WebElement webTableSubmenu;
 
     public void selectWebTableSubmenu(){
+        pageMethods.scrollPage(0, 350);
+        LoggerUtility.info("The user scrolled down the page!");
         elementMethods.clickElement(webTableSubmenu);
         LoggerUtility.info("The user clicked on the Web Table submenu");
     }

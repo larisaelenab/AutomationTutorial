@@ -1,10 +1,9 @@
 package tests;
 
 import helperMethods.PageMethods;
-import objectData.PracticeFormObject;
 import objectData.WebTableObject;
 import org.testng.annotations.Test;
-import pages.BrowserWindowPage;
+import pages.ElementsPage;
 import pages.HomePage;
 import pages.WebTablePage;
 import sharedData.SharedData;
@@ -25,8 +24,8 @@ public class WebTableTest extends SharedData {
         HomePage homePage=new HomePage(getDriver());
         homePage.navigateToElementsMenu();
 
-        BrowserWindowPage browserWindowPage=new BrowserWindowPage(getDriver());
-        browserWindowPage.navigateToWebTable();
+        ElementsPage elementsPage=new ElementsPage(getDriver());
+        elementsPage.selectWebTableSubmenu();
 
 
         WebTablePage webTablePage=new WebTablePage(getDriver());
