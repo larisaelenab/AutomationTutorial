@@ -17,10 +17,6 @@ public class WebTableTest extends SharedData {
 
         WebTableObject testData=new WebTableObject("src/test/resources/testData/WebTableData.json");
 
-        //Obiecte:
-        PageMethods pageMethods=new PageMethods(getDriver());
-        pageMethods.scrollPage(0,360);
-
         HomePage homePage=new HomePage(getDriver());
         homePage.navigateToElementsMenu();
 

@@ -9,7 +9,7 @@ import sharedData.SharedData;
 public class AlertTest extends SharedData {
 
     @Test
-    public void alertTest(){
+    public void metodaTest(){
 
         HomePage homePage = new HomePage(getDriver());
         homePage.navigateToAlertsMenu();

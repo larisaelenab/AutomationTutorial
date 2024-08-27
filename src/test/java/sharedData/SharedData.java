@@ -31,7 +31,7 @@ public class SharedData {
         driver.get("https://demoqa.com/");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        LoggerUtility.info("The browser is open with success");
+        LoggerUtility.info("The browser is opened with success");
     }
 
     @AfterMethod

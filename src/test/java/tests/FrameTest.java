@@ -14,7 +14,7 @@ import java.time.Duration;
 public class FrameTest extends SharedData {
 
     @Test
-    public void alertTest() {
+    public void metodaTest() {
 
         HomePage homePage = new HomePage(getDriver());
         homePage.navigateToAlertsMenu();
