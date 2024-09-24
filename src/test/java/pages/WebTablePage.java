@@ -1,5 +1,6 @@
 package pages;
 
+import database.repositories.WebTable;
 import loggerUtility.LoggerUtility;
 import objectData.WebTableObject;
 import org.openqa.selenium.WebDriver;
@@ -69,6 +70,8 @@ public class WebTablePage extends BasePage{
         LoggerUtility.info("The user edits the salaryelement  with the value: " + testData.getEditdepartmentValue());
         elementMethods.clickElement(editSubmitElement);
         LoggerUtility.info("The user clicked to submit the edited values");
+        WebTable.insertEntry(testData);
+        LoggerUtility.info("All the data were inserted with success into WebTable table");
     }
 
     public void deleteEntry(){

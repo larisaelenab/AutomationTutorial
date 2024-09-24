@@ -1,5 +1,6 @@
 package pages;
 
+import database.repositories.PracticeForm;
 import loggerUtility.LoggerUtility;
 import objectData.PracticeFormObject;
 import org.openqa.selenium.By;
@@ -152,6 +153,9 @@ public class PracticeFormPage extends BasePage{
         LoggerUtility.info("The user scrolled down the page");
         elementMethods.clickJSElement(submitForm);
         LoggerUtility.info("The user submitted the form");
+
+        PracticeForm.insertEntry(testData);
+        LoggerUtility.info("All the data were inserted with success into PracticeForm table");
     }
 
     public void validateEntireForm(PracticeFormObject testData){

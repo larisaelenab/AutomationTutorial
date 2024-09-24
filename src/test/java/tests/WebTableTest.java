@@ -23,7 +23,6 @@ public class WebTableTest extends SharedData {
         ElementsPage elementsPage=new ElementsPage(getDriver());
         elementsPage.selectWebTableSubmenu();
 
-
         WebTablePage webTablePage=new WebTablePage(getDriver());
         webTablePage.addEntry(testData);
         webTablePage.editEntry(testData);
